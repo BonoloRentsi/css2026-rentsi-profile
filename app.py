@@ -2,8 +2,8 @@ import streamlit as st
 
 # ---------------- Page Configuration ----------------
 st.set_page_config(
-    page_title="Researcher Profile | CSS 2026",
-    page_icon="📊",
+    page_title="Bonolo Angele Rentsi Profile | CSS 2026",
+    page_icon="🧠",
     layout="wide"
 )
 
@@ -11,14 +11,22 @@ st.set_page_config(
 st.sidebar.title("🔍 Navigation")
 section = st.sidebar.radio(
     "Go to",
-    ["Home", "About Me", "Research Interests", "Projects", "Publications", "Contact"]
+    [
+        "Home",
+        "About Me",
+        "Research Interests",
+        "Research Projects",
+        "Publications & Reviews",
+        "Skills & Tools",
+        "Contact"
+    ]
 )
 
 # ---------------- Header ----------------
 st.markdown(
     """
-    <h1 style='text-align: center; color: #2C7BE5;'>Researcher Profile</h1>
-    <h3 style='text-align: center;'>Data Science | Machine Learning | AI Research</h3>
+    <h1 style='text-align: center; color: #D62828;'>Researcher Profile</h1>
+    <h3 style='text-align: center;'>Data Science • Machine Learning • AI Research</h3>
     <hr>
     """,
     unsafe_allow_html=True
@@ -27,38 +35,34 @@ st.markdown(
 # ---------------- Home ----------------
 if section == "Home":
     st.subheader("👋 Welcome")
+
     st.write(
         """
         Welcome to my researcher profile page.  
-        This page showcases my academic background, research interests, 
-        projects, and contributions in **Data Science, Machine Learning, and AI-driven systems**.
+        I am a **Data Science researcher** with experience in **machine learning, deep learning,
+        explainable AI (XAI), and applied AI systems**.
+
+        My work focuses on solving real-world problems using data-driven and ethical AI approaches,
+        particularly in **healthcare, recommender systems, and speech analytics**.
         """
     )
 
     st.info(
-        "This Streamlit app was created as part of the **CSS 2026 Streamlit Cloud assignment**."
+        "This Streamlit app was created for the **CSS 2026 Streamlit Cloud assignment**."
     )
 
 # ---------------- About Me ----------------
 elif section == "About Me":
     st.subheader("👨‍🎓 About Me")
+
     st.write(
         """
-        I am a data science researcher with strong interests in applied machine learning,
-        deep learning, and intelligent systems. My work focuses on developing
-        data-driven solutions for real-world problems, particularly in healthcare,
-        recommendation systems, and predictive analytics.
-        """
-    )
+        I am a data science researcher with hands-on experience in building, training,
+        and evaluating machine learning and deep learning models.
+        I have worked extensively on **medical image analysis**, **audio-based emotion detection**,
+        and **recommendation systems**.
 
-    st.markdown("**Skills:**")
-    st.markdown(
-        """
-        - Python, Pandas, NumPy  
-        - Machine Learning & Deep Learning  
-        - Data Visualization  
-        - ETL Pipelines  
-        - Streamlit & Flask
+        My academic work emphasizes **model performance, interpretability, fairness, and real-world applicability**.
         """
     )
 
@@ -71,57 +75,104 @@ elif section == "Research Interests":
     with col1:
         st.markdown(
             """
-            - Artificial Intelligence in Healthcare  
-            - Explainable AI (XAI)  
-            - Deep Learning (CNNs, RNNs, Transformers)  
-            - Medical Image & Signal Analysis
+            - AI for Healthcare & Disease Detection  
+            - Deep Learning (CNNs, RNNs, LSTM, GRU, Vision Transformers)  
+            - Medical Image Analysis  
+            - Speech & Audio Signal Processing  
             """
         )
 
     with col2:
         st.markdown(
             """
-            - Recommendation Systems  
-            - Data Ethics & Fairness  
+            - Explainable AI (Grad-CAM, LIME, SHAP)  
+            - Fairness & Bias Mitigation in AI  
             - Federated Learning  
-            - Model Optimization
+            - Model Optimization & Transfer Learning  
             """
         )
 
-# ---------------- Projects ----------------
-elif section == "Projects":
-    st.subheader("🛠️ Selected Projects")
+# ---------------- Research Projects ----------------
+elif section == "Research Projects":
+    st.subheader("🧪 Research & Academic Projects")
 
     st.markdown(
         """
-        **🔹 Pneumonia Detection Using AI**  
-        Developed deep learning models to detect pneumonia from medical data, 
-        improving diagnostic accuracy.
+        **🔹 Monkeypox Detection Using Deep Learning**  
+        Conducted an in-depth comparative study using CNNs, Vision Transformers,
+        and transfer learning models on multiple Monkeypox datasets.
+        Applied explainability techniques such as **Grad-CAM and LIME**, and explored
+        fairness, mobile optimization, and federated learning.
 
-        **🔹 Movie Recommendation System**  
-        Built a hybrid recommendation system using collaborative and content-based filtering.
+        **🔹 Pneumonia Detection Using AI Systems**  
+        Studied AI-driven approaches for detecting pneumonia using medical data,
+        focusing on accuracy, robustness, and clinical relevance.
 
-        **🔹 Emotion Detection from Audio**  
-        Designed CNN-RNN models for speech emotion recognition using audio features.
+        **🔹 Emotion Detection from Speech**  
+        Built emotion recognition systems using **LSTM, GRU, and CNN-RNN hybrid models**.
+        Applied audio data augmentation and extracted features such as **MFCC, chroma,
+        delta, and prosodic features**.
+
+        **🔹 Recommendation Systems**  
+        Developed content-based, collaborative, and hybrid recommendation systems
+        using real-world datasets (movies, products, and drug reviews).
 
         **🔹 ETL & Data Analytics Pipelines**  
-        Created end-to-end data pipelines for cleaning, transforming, and analyzing large datasets.
+        Designed ETL pipelines using Python, Pandas, and SQLite to clean, transform,
+        and analyze large datasets, including Slurm-based data processing workflows.
         """
     )
 
-# ---------------- Publications ----------------
-elif section == "Publications":
-    st.subheader("📚 Publications & Academic Work")
+# ---------------- Publications & Reviews ----------------
+elif section == "Publications & Reviews":
+    st.subheader("📚 Publications & Literature Reviews")
 
     st.write(
         """
-        - Literature review on **Optimization for Online Learning**
-        - Research analysis on **AI-driven disease detection systems**
-        - Comparative studies on **Machine Learning and Deep Learning models**
+        - Literature Review on **Optimization for Online Learning**
+        - Comprehensive Review of **Deep Learning Approaches for Monkeypox Detection**
+        - Comparative Analysis of CNNs vs Vision Transformers in Medical Imaging
+        - Review of Explainable AI Techniques for Healthcare Applications
         """
     )
 
-    st.warning("Full publication list available upon request.")
+    st.warning("Some works are part of ongoing or academic submissions.")
+
+# ---------------- Skills & Tools ----------------
+elif section == "Skills & Tools":
+    st.subheader("🛠️ Skills & Tools")
+
+    col1, col2 = st.columns(2)
+
+    with col1:
+        st.markdown(
+            """
+            **Programming & Data**
+            - Python  
+            - Pandas, NumPy  
+            - SQL, SQLite  
+
+            **Machine Learning**
+            - Scikit-learn  
+            - Model Evaluation & Metrics  
+            - Imbalanced Data Handling  
+            """
+        )
+
+    with col2:
+        st.markdown(
+            """
+            **Deep Learning & AI**
+            - TensorFlow, Keras  
+            - CNNs, RNNs, LSTM, GRU  
+            - Vision Transformers  
+
+            **Deployment & Visualization**
+            - Streamlit, Flask  
+            - Matplotlib, Seaborn  
+            - Model Explainability (XAI)  
+            """
+        )
 
 # ---------------- Contact ----------------
 elif section == "Contact":
@@ -129,13 +180,15 @@ elif section == "Contact":
 
     st.markdown(
         """
-        📧 **Email:** xabisomemani@example.com  
-        📱 **Phone:** +27 00 000 0000  
-        📍 **Location:** Johannesburg, South Africa
+        📧 **Email:** 202219880@spu.ac.za 
+        📱 **Phone:** +27 75 460 5318 
+        📍 **Location:** Kimberley, South Africa  
         """
     )
 
-    st.success("Feel free to reach out for research collaboration or academic discussions.")
+    st.success(
+        "Open to research collaboration, academic discussions, and data science projects."
+    )
 
 # ---------------- Footer ----------------
 st.markdown(
