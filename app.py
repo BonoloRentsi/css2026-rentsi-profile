@@ -25,7 +25,7 @@ section = st.sidebar.radio(
 # ---------------- Header ----------------
 st.markdown(
     """
-    <h1 style='text-align: center; color: #D62828;'>Researcher Profile</h1>
+    <h1 style='text-align: center; color: #D62828;'>Bonolo Angela Rentsi Profile</h1>
     <h3 style='text-align: center;'>Data Science • Machine Learning • AI Research</h3>
     <hr>
     """,
@@ -200,3 +200,4 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
+
